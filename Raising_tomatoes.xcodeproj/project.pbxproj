@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		997B706B27B7F86E00C79A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706A27B7F86E00C79A82 /* AppDelegate.swift */; };
+		997B706D27B7F86E00C79A82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706C27B7F86E00C79A82 /* SceneDelegate.swift */; };
+		997B706F27B7F86E00C79A82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706E27B7F86E00C79A82 /* ViewController.swift */; };
+		997B707227B7F86E00C79A82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997B707027B7F86E00C79A82 /* Main.storyboard */; };
+		997B707427B7F86E00C79A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997B707327B7F86E00C79A82 /* Assets.xcassets */; };
+		997B707727B7F86E00C79A82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997B707527B7F86E00C79A82 /* LaunchScreen.storyboard */; };
+		997B708127B92CA100C79A82 /* 빈폴 2020OTF Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997B708027B92CA100C79A82 /* 빈폴 2020OTF Medium.otf */; };
+		997B708527B931CB00C79A82 /* ACC어린이마음고운체.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997B708227B931CB00C79A82 /* ACC어린이마음고운체.otf */; };
+		997B708627B931CB00C79A82 /* ACC어린이하늘맑은체.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997B708327B931CB00C79A82 /* ACC어린이하늘맑은체.otf */; };
+		997B708727B931CB00C79A82 /* ACC어린이가을담은체.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997B708427B931CB00C79A82 /* ACC어린이가을담은체.otf */; };
+		997B708927B9327700C79A82 /* KyoboHandwriting2020pdy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997B708827B9327700C79A82 /* KyoboHandwriting2020pdy.otf */; };
+		997B708C27BA266E00C79A82 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B708B27BA266E00C79A82 /* SettingViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		997B706727B7F86E00C79A82 /* Raising_tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raising_tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		997B706A27B7F86E00C79A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		997B706C27B7F86E00C79A82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		997B706E27B7F86E00C79A82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		997B707127B7F86E00C79A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		997B707327B7F86E00C79A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		997B707627B7F86E00C79A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		997B707827B7F86E00C79A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		997B708027B92CA100C79A82 /* 빈폴 2020OTF Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "빈폴 2020OTF Medium.otf"; sourceTree = "<group>"; };
+		997B708227B931CB00C79A82 /* ACC어린이마음고운체.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ACC어린이마음고운체.otf"; sourceTree = "<group>"; };
+		997B708327B931CB00C79A82 /* ACC어린이하늘맑은체.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ACC어린이하늘맑은체.otf"; sourceTree = "<group>"; };
+		997B708427B931CB00C79A82 /* ACC어린이가을담은체.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ACC어린이가을담은체.otf"; sourceTree = "<group>"; };
+		997B708827B9327700C79A82 /* KyoboHandwriting2020pdy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KyoboHandwriting2020pdy.otf; sourceTree = "<group>"; };
+		997B708B27BA266E00C79A82 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		997B708D27BA357200C79A82 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		997B706427B7F86E00C79A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		997B705E27B7F86E00C79A82 = {
+			isa = PBXGroup;
+			children = (
+				997B706927B7F86E00C79A82 /* Raising_tomatoes */,
+				997B706827B7F86E00C79A82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		997B706827B7F86E00C79A82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				997B706727B7F86E00C79A82 /* Raising_tomatoes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		997B706927B7F86E00C79A82 /* Raising_tomatoes */ = {
+			isa = PBXGroup;
+			children = (
+				997B707F27B92C6F00C79A82 /* Source */,
+				997B707E27B92C6700C79A82 /* Font */,
+				997B706A27B7F86E00C79A82 /* AppDelegate.swift */,
+				997B706C27B7F86E00C79A82 /* SceneDelegate.swift */,
+				997B707327B7F86E00C79A82 /* Assets.xcassets */,
+				997B707527B7F86E00C79A82 /* LaunchScreen.storyboard */,
+				997B707827B7F86E00C79A82 /* Info.plist */,
+				997B708D27BA357200C79A82 /* README.md */,
+			);
+			path = Raising_tomatoes;
+			sourceTree = "<group>";
+		};
+		997B707E27B92C6700C79A82 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				997B708027B92CA100C79A82 /* 빈폴 2020OTF Medium.otf */,
+				997B708427B931CB00C79A82 /* ACC어린이가을담은체.otf */,
+				997B708227B931CB00C79A82 /* ACC어린이마음고운체.otf */,
+				997B708327B931CB00C79A82 /* ACC어린이하늘맑은체.otf */,
+				997B708827B9327700C79A82 /* KyoboHandwriting2020pdy.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		997B707F27B92C6F00C79A82 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				997B707027B7F86E00C79A82 /* Main.storyboard */,
+				997B706E27B7F86E00C79A82 /* ViewController.swift */,
+				997B708B27BA266E00C79A82 /* SettingViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		997B706627B7F86E00C79A82 /* Raising_tomatoes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 997B707B27B7F86E00C79A82 /* Build configuration list for PBXNativeTarget "Raising_tomatoes" */;
+			buildPhases = (
+				997B706327B7F86E00C79A82 /* Sources */,
+				997B706427B7F86E00C79A82 /* Frameworks */,
+				997B706527B7F86E00C79A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Raising_tomatoes;
+			productName = Raising_tomatoes;
+			productReference = 997B706727B7F86E00C79A82 /* Raising_tomatoes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		997B705F27B7F86E00C79A82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					997B706627B7F86E00C79A82 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 997B706227B7F86E00C79A82 /* Build configuration list for PBXProject "Raising_tomatoes" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 997B705E27B7F86E00C79A82;
+			productRefGroup = 997B706827B7F86E00C79A82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				997B706627B7F86E00C79A82 /* Raising_tomatoes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		997B706527B7F86E00C79A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997B707727B7F86E00C79A82 /* LaunchScreen.storyboard in Resources */,
+				997B708527B931CB00C79A82 /* ACC어린이마음고운체.otf in Resources */,
+				997B707427B7F86E00C79A82 /* Assets.xcassets in Resources */,
+				997B708627B931CB00C79A82 /* ACC어린이하늘맑은체.otf in Resources */,
+				997B708727B931CB00C79A82 /* ACC어린이가을담은체.otf in Resources */,
+				997B708127B92CA100C79A82 /* 빈폴 2020OTF Medium.otf in Resources */,
+				997B708927B9327700C79A82 /* KyoboHandwriting2020pdy.otf in Resources */,
+				997B707227B7F86E00C79A82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		997B706327B7F86E00C79A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997B706F27B7F86E00C79A82 /* ViewController.swift in Sources */,
+				997B706B27B7F86E00C79A82 /* AppDelegate.swift in Sources */,
+				997B706D27B7F86E00C79A82 /* SceneDelegate.swift in Sources */,
+				997B708C27BA266E00C79A82 /* SettingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		997B707027B7F86E00C79A82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				997B707127B7F86E00C79A82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		997B707527B7F86E00C79A82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				997B707627B7F86E00C79A82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		997B707927B7F86E00C79A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		997B707A27B7F86E00C79A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		997B707C27B7F86E00C79A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXFMRW69P3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Raising_tomatoes/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOSoo.Raising-tomatoes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		997B707D27B7F86E00C79A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JXFMRW69P3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Raising_tomatoes/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOSoo.Raising-tomatoes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		997B706227B7F86E00C79A82 /* Build configuration list for PBXProject "Raising_tomatoes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				997B707927B7F86E00C79A82 /* Debug */,
+				997B707A27B7F86E00C79A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		997B707B27B7F86E00C79A82 /* Build configuration list for PBXNativeTarget "Raising_tomatoes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				997B707C27B7F86E00C79A82 /* Debug */,
+				997B707D27B7F86E00C79A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 997B705F27B7F86E00C79A82 /* Project object */;
+}
