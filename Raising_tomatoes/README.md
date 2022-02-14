@@ -1,8 +1,5 @@
 앱 이름: 미정 
 
-<img src="https://images.velog.io/images/rlawnstn01023/post/5ab9cd66-60ee-4ede-9f1e-764f37787077/1024.png  width="200" height="200"/>
-
-
 #  2022.02.12 ~ 13
 
 ## 오늘의 개발
