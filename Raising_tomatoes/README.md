@@ -1,5 +1,5 @@
 앱 이름: 미정 
-![](https://images.velog.io/images/rlawnstn01023/post/5ab9cd66-60ee-4ede-9f1e-764f37787077/1024.png){: width="100" height="100"}
+![](https://images.velog.io/images/rlawnstn01023/post/5ab9cd66-60ee-4ede-9f1e-764f37787077/1024.png){: width="30" height="30"}
 
 
 
