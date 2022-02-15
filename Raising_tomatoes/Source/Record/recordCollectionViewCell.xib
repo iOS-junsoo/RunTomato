@@ -22,7 +22,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcr-ll-VUz">
-                        <rect key="frame" x="12" y="17" width="23" height="21"/>
+                        <rect key="frame" x="11" y="0.0" width="23" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSM-gP-Kjl">
+                        <rect key="frame" x="2" y="32" width="41" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
                         <nil key="textColor"/>
@@ -34,6 +41,7 @@
             <size key="customSize" width="133" height="128"/>
             <connections>
                 <outlet property="dateLabel" destination="Bcr-ll-VUz" id="ahS-0l-ND3"/>
+                <outlet property="successLabel" destination="SSM-gP-Kjl" id="QaA-2F-w7Y"/>
             </connections>
             <point key="canvasLocation" x="210.86956521739131" y="178.45982142857142"/>
         </collectionViewCell>

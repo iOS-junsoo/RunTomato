@@ -29,11 +29,7 @@ class recordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollection()
-        
-        print(days)
        
-        
-        
     }
     
     func setCollection() {
@@ -42,7 +38,7 @@ class recordViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "recordCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "recordCollectionViewCell")
         
         //날짜 설정
-        dateFormatter.dateFormat = "yyyy년M월" // 월 표시 포맷 설정
+        dateFormatter.dateFormat = "yyyy년 M월" // 월 표시 포맷 설정
         components.year = cal.component(.year, from: now)
         components.month = cal.component(.month, from: now)
         components.day = 1
@@ -66,6 +62,8 @@ class recordViewController: UIViewController {
                 self.days.append("")
             } else {
                 self.days.append(String(day))
+                
+                
             }
         }
     }
@@ -75,6 +73,7 @@ class recordViewController: UIViewController {
         if CheckFlag.checkTabbarIndex == 0 {
             tabBarController?.selectedIndex = 1
         }
+        collectionView.reloadData()
     }
     
     
@@ -84,26 +83,46 @@ class recordViewController: UIViewController {
 }
 
 extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(section)
         switch section {
         case 0:
             return 7
+            
         default:
             return self.days.count
+           
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCollectionViewCell", for: indexPath) as! recordCollectionViewCell
 
+//        print(indexPath.section)
+        
         switch indexPath.section {
-
         case 0:
             cell.dateLabel.text = weeks[indexPath.row] // 요일
+            cell.successLabel.text = ""
         default:
             cell.dateLabel.text = days[indexPath.row] // 일
+
             
         }
+        
+//        if indexPath.section == 1 && indexPath.row == 1{
+//            cell.successLabel.text = "실패"
+//        }
+//
+//        if indexPath.section == 1 && indexPath.row == 2{
+//            cell.successLabel.text = "실패1"
+//        }
 
         if indexPath.row % 7 == 0 { // 일요일
             cell.dateLabel.textColor = .red
@@ -114,6 +133,11 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(indexPath.section), \(indexPath.row)")
+        
     }
     
         

@@ -50,16 +50,16 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     if let activity = data {
                         if activity.walking == true {
-                            print("걷는 중")
+//                            print("걷는 중")
                             self.stepState.text = "-운동 중-"
                         } else if activity.running == true {
-                            print("뛰는 중")
+//                            print("뛰는 중")
                             self.stepState.text = "-운동 중-"
                         } else if activity.stationary == true {
-                            print("쉬는 중")
+//                            print("쉬는 중")
                             self.stepState.text = "-휴식 중-"
                         } else if activity.cycling == true {
-                            print("자전거 타는 중")
+//                            print("자전거 타는 중")
                         }
                     }
                 }
