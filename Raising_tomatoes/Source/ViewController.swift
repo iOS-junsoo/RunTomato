@@ -21,7 +21,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        //tabbar selected index 무력화
+        CheckFlag.checkTabbarIndex = 1
+        
+       //성장 화면 초기값 설정 - UserDefault 적용시 변경 예정
+        self.tomatoImage.image = UIImage(named: "1")
+        self.levelName.text = "LV1. 빈 화분"
         
         
         
@@ -31,6 +36,14 @@ class ViewController: UIViewController {
         let current_date_string = formatter.string(from: Date())
         date.text = current_date_string
         
+        
+        
+        
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //MARK: - 걷는지, 뛰는지
         if CMMotionActivityManager.isActivityAvailable() {
             self.activityManager.startActivityUpdates(to: OperationQueue.main) { (data) in
@@ -38,16 +51,16 @@ class ViewController: UIViewController {
                     if let activity = data {
                         if activity.walking == true {
                             print("걷는 중")
-                            self.stepState.text = "-걷는 중-"
+                            self.stepState.text = "-운동 중-"
                         } else if activity.running == true {
                             print("뛰는 중")
-                            self.stepState.text = "-뛰는 중-"
+                            self.stepState.text = "-운동 중-"
                         } else if activity.stationary == true {
                             print("쉬는 중")
                             self.stepState.text = "-휴식 중-"
                         } else if activity.cycling == true {
                             print("자전거 타는 중")
-                        } 
+                        }
                     }
                 }
             }
@@ -96,10 +109,6 @@ class ViewController: UIViewController {
                 
             }
         }
-        
-        
-        
-        
     }
     
     
