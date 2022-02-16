@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreMotion
+import UserNotifications
 
 class ViewController: UIViewController {
     @IBOutlet weak var levelName: UILabel!
@@ -19,8 +20,18 @@ class ViewController: UIViewController {
     let activityManager = CMMotionActivityManager()
     var stepCount = 0
     
+    let userNotificationCenter = UNUserNotificationCenter.current() //앱 또는 앱 확장에 대한 공유 사용자 알림 센터 개체를 반환
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        //MARK: - 푸쉬알림 함수
+        requestNotificationAuthorization()
+        
+        
+        
         //tabbar selected index 무력화
         CheckFlag.checkTabbarIndex = 1
         
@@ -43,7 +54,36 @@ class ViewController: UIViewController {
         
     }
     
+    func requestNotificationAuthorization() { // 알림 권한 요청 함수
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+                if let error = error {
+                    print("Error: \(error)")
+                }
+            }
+    }
+
+    func sendNotification(seconds: Double) { // 알림 전송 함수
+        let notificationContent = UNMutableNotificationContent()
+
+            notificationContent.title = "토마토의 성장"
+            notificationContent.body = "현재 LV2. 씨앗으로 성장했습니다."
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+            let request = UNNotificationRequest(identifier: "testNotification",
+                                                content: notificationContent,
+                                                trigger: trigger)
+
+            userNotificationCenter.add(request) { error in
+                if let error = error {
+                    print("Notification Error: ", error)
+                }
+            }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         //MARK: - 걷는지, 뛰는지
         if CMMotionActivityManager.isActivityAvailable() {
             self.activityManager.startActivityUpdates(to: OperationQueue.main) { (data) in
@@ -78,6 +118,7 @@ class ViewController: UIViewController {
                             if self.stepCount < 10 && self.stepCount > 0 {
                                 self.tomatoImage.image = UIImage(named: "2")
                                 self.levelName.text = "LV2. 씨앗"
+                                self.sendNotification(seconds: 1)
                             } else if self.stepCount < 20 && self.stepCount > 9  {
                                 self.tomatoImage.image = UIImage(named: "3")
                                 self.levelName.text = "LV3. 뿌리"

@@ -23,11 +23,16 @@ class recordViewController: UIViewController {
     var daysCountInMonth = 0 // 해당 월이 며칠까지 있는지
     var weekdayAdding = 0 // 시작일
     
-
-    
+    var successState: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - 오늘 몇일 인가?
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        let current_date_string = formatter.string(from: Date())
+        Today.day = Int(current_date_string) ?? 0
+        
         setCollection()
        
     }
@@ -50,7 +55,6 @@ class recordViewController: UIViewController {
         let firstWeekDay = cal.component(.weekday, from: firstDayOfMonth!)// 해당 수로 반환이 됩니다. 1은 일요일 ~ 7은 토요일
         daysCountInMonth = cal.range(of: .day, in: .month, for: firstDayOfMonth!)!.count //해당 달의 날짜세기
         weekdayAdding = 2 - firstWeekDay //아래의 for문과 같이 설명을 보자 .
-        
         //만약 해당 달의 1일의 시작이 수요일이라면 달력의 시자은 수요일 즉, 4번째 인덱스부터 1이 들어가야한다. 따라서 2 - 4 = -2 인데 아래의 if 문을 보면 weekdayAdding가 1 보자 작을 때는 빈칸을 입력하므로 -2, -1, 0 총 3개의 빈칸이 들어가게 된다.
         
         self.yearMonthLabel.text = dateFormatter.string(from: firstDayOfMonth!)
@@ -60,10 +64,16 @@ class recordViewController: UIViewController {
         for day in weekdayAdding...daysCountInMonth {
             if day < 1 {
                 self.days.append("")
+                self.successState.append("")
             } else {
                 self.days.append(String(day))
-                
-                
+                if day == 1 || day == 5 {
+                    self.successState.append("실패")
+                }else if Today.day < day { //오늘 날짜 이후에는 성공여부가 표시되지 않도록 하는 조건문
+                    self.successState.append("")
+                } else {
+                    self.successState.append("성공")
+                }
             }
         }
     }
@@ -89,7 +99,6 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(section)
         switch section {
         case 0:
             return 7
@@ -104,25 +113,26 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCollectionViewCell", for: indexPath) as! recordCollectionViewCell
 
-//        print(indexPath.section)
+
         
         switch indexPath.section {
         case 0:
             cell.dateLabel.text = weeks[indexPath.row] // 요일
             cell.successLabel.text = ""
+        
         default:
             cell.dateLabel.text = days[indexPath.row] // 일
-
-            
+            cell.successLabel.text = successState[indexPath.row] // 성공여부
+            if successState[indexPath.row] == "성공" {
+                cell.successLabel.textColor = UIColor(red: 107, green: 137, blue: 132)
+            } else if successState[indexPath.row] == "실패" {
+                cell.successLabel.textColor = UIColor(red: 192 , green: 86, blue: 74)
+            }
         }
         
-//        if indexPath.section == 1 && indexPath.row == 1{
-//            cell.successLabel.text = "실패"
-//        }
-//
-//        if indexPath.section == 1 && indexPath.row == 2{
-//            cell.successLabel.text = "실패1"
-//        }
+        //성공여부는 당일 토마토를 재배하기 못하면 successState 배열에 append로 실패 할당
+        
+
 
         if indexPath.row % 7 == 0 { // 일요일
             cell.dateLabel.textColor = .red

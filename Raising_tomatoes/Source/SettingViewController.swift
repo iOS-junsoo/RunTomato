@@ -9,6 +9,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var pushNotificationSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +17,15 @@ class SettingViewController: UIViewController {
     }
     
 
+    @IBAction func onAndOff(_ sender: Any) {
+//        if pushNotificationSwitch.isOn == true {
+//            UIApplication.shared.registerForRemoteNotifications() //푸쉬알람 허용
+//            print("허용")
+//        } else {
+//            UIApplication.shared.unregisterForRemoteNotifications() //푸쉬알람 비허용
+//            print("비허용")
+//        }
+    }
     /*
     // MARK: - Navigation
 

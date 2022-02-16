@@ -23,6 +23,7 @@
 		997B709227BBE65E00C79A82 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B709127BBE65E00C79A82 /* Global.swift */; };
 		997B709627BBEAAF00C79A82 /* recordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B709427BBEAAF00C79A82 /* recordCollectionViewCell.swift */; };
 		997B709727BBEAAF00C79A82 /* recordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997B709527BBEAAF00C79A82 /* recordCollectionViewCell.xib */; };
+		997B709A27BCD9ED00C79A82 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B709927BCD9ED00C79A82 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		997B709127BBE65E00C79A82 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		997B709427BBEAAF00C79A82 /* recordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordCollectionViewCell.swift; sourceTree = "<group>"; };
 		997B709527BBEAAF00C79A82 /* recordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = recordCollectionViewCell.xib; sourceTree = "<group>"; };
+		997B709927BCD9ED00C79A82 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		997B706927B7F86E00C79A82 /* Raising_tomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				997B709827BCD9D900C79A82 /* Extension */,
 				997B709027BBE64700C79A82 /* Global */,
 				997B707F27B92C6F00C79A82 /* Source */,
 				997B707E27B92C6700C79A82 /* Font */,
@@ -129,6 +132,14 @@
 				997B709527BBEAAF00C79A82 /* recordCollectionViewCell.xib */,
 			);
 			path = Record;
+			sourceTree = "<group>";
+		};
+		997B709827BCD9D900C79A82 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				997B709927BCD9ED00C79A82 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 				997B706D27B7F86E00C79A82 /* SceneDelegate.swift in Sources */,
 				997B708F27BBE5A900C79A82 /* recordViewController.swift in Sources */,
 				997B708C27BA266E00C79A82 /* SettingViewController.swift in Sources */,
+				997B709A27BCD9ED00C79A82 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

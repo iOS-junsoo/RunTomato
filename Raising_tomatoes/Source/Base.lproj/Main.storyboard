@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1203.0769230769231" y="-64.691943127962077"/>
+            <point key="canvasLocation" x="-1203" y="-65"/>
         </scene>
         <!--설정-->
         <scene sceneID="m7p-aP-ZWD">
@@ -118,14 +118,33 @@
                     <view key="view" contentMode="scaleToFill" id="354-jl-bkk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-Vp-FgU">
+                                <rect key="frame" x="299" y="144" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onAndOff:" destination="NRK-YB-KjZ" eventType="valueChanged" id="gHc-eq-hdo"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="알림 허용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqZ-H3-JFg">
+                                <rect key="frame" x="49" y="149" width="69" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Tl9-mw-1dG"/>
                         <color key="backgroundColor" red="0.9529423118" green="0.91764646770000002" blue="0.85490328069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape.fill" catalog="system" id="d3k-Re-di1"/>
+                    <connections>
+                        <outlet property="pushNotificationSwitch" destination="4Ps-Vp-FgU" id="oou-2L-zxK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7h1-W1-Akj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-408" y="-65"/>
+            <point key="canvasLocation" x="-562" y="-65"/>
         </scene>
         <!--기록-->
         <scene sceneID="JOT-ss-Lqe">
