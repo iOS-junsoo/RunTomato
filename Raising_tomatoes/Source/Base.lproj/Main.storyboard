@@ -79,17 +79,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="다음 성장까지 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-Yo-jDH">
-                                <rect key="frame" x="118" y="316" width="155" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="다음 성장까지 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-Yo-jDH">
+                                <rect key="frame" x="93" y="316" width="205" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-쉬는 중-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16m-Xv-v2P">
-                                <rect key="frame" x="121" y="126" width="149" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16m-Xv-v2P">
+                                <rect key="frame" x="16" y="126" width="358" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="38"/>
+                                <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -100,16 +100,16 @@
                     <tabBarItem key="tabBarItem" title="성장" image="leaf.fill" catalog="system" id="dzx-DW-DHM"/>
                     <connections>
                         <outlet property="date" destination="c5x-qD-yOX" id="NGv-U3-Fyu"/>
+                        <outlet property="endOfTheDayLabel" destination="16m-Xv-v2P" id="zag-Dp-qy6"/>
                         <outlet property="growthPercent" destination="iwV-Yo-jDH" id="Wes-UN-aXE"/>
                         <outlet property="levelName" destination="gFr-bI-NmM" id="PyO-Jt-gK2"/>
-                        <outlet property="stepState" destination="16m-Xv-v2P" id="uXB-zO-cSs"/>
                         <outlet property="tomatoImage" destination="Brr-ML-vem" id="Rtu-Ve-LEs"/>
                         <outlet property="walkCount" destination="0R3-K3-Smp" id="Yiw-qC-sZq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1203" y="-65"/>
+            <point key="canvasLocation" x="-1203.0769230769231" y="-65.402843601895725"/>
         </scene>
         <!--설정-->
         <scene sceneID="m7p-aP-ZWD">

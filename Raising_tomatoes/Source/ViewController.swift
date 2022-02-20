@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var walkCount: UILabel!
     @IBOutlet weak var growthPercent: UILabel!
     @IBOutlet weak var tomatoImage: UIImageView!
-    @IBOutlet weak var stepState: UILabel!
+    @IBOutlet weak var endOfTheDayLabel: UILabel!
     let pedoMeter = CMPedometer()
     let activityManager = CMMotionActivityManager()
     var stepCount = 0
@@ -25,18 +25,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         extraStepCount = Int(UserDefaults.standard.string(forKey: "stepCount") ?? "") ?? 0 //앱 종료후 다시 실행 시킬 때 기존의 있던값을 변수에 저장
-        
-        //MARK: - 걸음수 초기화 - 조건문은 이후에 자정이 되면 실행되는 걸로 수정
-        if Int(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음") ?? 0 > 100 {
-            UserDefaults.standard.set(0, forKey: "stepCount")
-            tomatoImage.image = UIImage(named: "1")
-            levelName.text = "LV1. 빈 화분"
-            print(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음")
-        }
-        
-        
-        
+
         //MARK: - UserDefaults에 저장된 데이터 할당
         walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음") 걸음"
     
@@ -103,71 +94,79 @@ class ViewController: UIViewController {
     func stepToImage(stepCount: Int) {
         
         print("함수:\(stepCount)")
-       if stepCount < 10 && stepCount > 0 {
+       if stepCount < 100 && stepCount > 0 {
            tomatoImage.image = UIImage(named: "2")
            levelName.text = "LV2. 씨앗"
-           sendNotification(seconds: 1)
-       } else if stepCount < 20 && stepCount > 9  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 100.0) * 100))%"
+           print(stepCount / 100)
+//           sendNotification(seconds: 1)
+       } else if stepCount < 300 && stepCount > 99  {
            tomatoImage.image = UIImage(named: "3")
            levelName.text = "LV3. 뿌리"
-       } else if stepCount < 30 && stepCount > 19  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 300.0) * 100))%"
+       } else if stepCount < 600 && stepCount > 299  {
            tomatoImage.image = UIImage(named: "4")
            levelName.text = "LV4. 뿌리뿌리"
-       } else if stepCount < 40 && stepCount > 29  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 600.0) * 100))%"
+       } else if stepCount < 1000 && stepCount > 599  {
            tomatoImage.image = UIImage(named: "5")
            levelName.text = "LV5. 아기새싹"
-       } else if stepCount < 50 && stepCount > 39  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 1000.0) * 100))%"
+       } else if stepCount < 1500 && stepCount > 999  {
             tomatoImage.image = UIImage(named: "6")
             levelName.text = "LV6. 자란 새싹"
-       } else if stepCount < 60 && stepCount > 49  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 1500.0) * 100))%"
+       } else if stepCount < 2500 && stepCount > 1499  {
             tomatoImage.image = UIImage(named: "7")
             levelName.text = "LV7. 많이 자란 새싹"
-       } else if stepCount < 70 && stepCount > 59  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 2500.0) * 100))%"
+       } else if stepCount < 3500 && stepCount > 2499  {
             tomatoImage.image = UIImage(named: "8")
             levelName.text = "LV8. 큰 새싹"
-       } else if stepCount < 80 && stepCount > 69  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 3500.0) * 100))%"
+       } else if stepCount < 4500 && stepCount > 3499  {
            tomatoImage.image = UIImage(named: "9")
            levelName.text = "LV9. 봉오리"
-       } else if stepCount < 90 && stepCount > 79  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 4500.0) * 100))%"
+       } else if stepCount < 6500 && stepCount > 4499  {
            tomatoImage.image = UIImage(named: "10")
            levelName.text = "LV10. 꽃"
-       } else if stepCount < 100 && stepCount > 89  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 6500.0) * 100))%"
+       } else if stepCount < 7500 && stepCount > 6499  {
            tomatoImage.image = UIImage(named: "11")
            levelName.text = "LV11. 아기 토마토"
-       } else if stepCount < 110 && stepCount > 99  {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 7500.0) * 100))%"
+       } else if stepCount < 10000 && stepCount > 7499  {
            tomatoImage.image = UIImage(named: "12")
            levelName.text = "LV12. 어린이 토마토"
-       } else if stepCount < 120   {
+           growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 10000.0) * 100))%"
+       } else if stepCount > 9999   {
            tomatoImage.image = UIImage(named: "13")
            levelName.text = "LV13. 토마토"
+           growthPercent.text = "목표달성 완료"
        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        
-        //MARK: - 걷는지, 뛰는지
-        if CMMotionActivityManager.isActivityAvailable() {
-            self.activityManager.startActivityUpdates(to: OperationQueue.main) { (data) in
-                DispatchQueue.main.async {
-                    if let activity = data {
-                        if activity.walking == true {
-//                            print("걷는 중")
-                            self.stepState.text = "-운동 중-"
-                        } else if activity.running == true {
-//                            print("뛰는 중")
-                            self.stepState.text = "-운동 중-"
-                        } else if activity.stationary == true {
-//                            print("쉬는 중")
-                            self.stepState.text = "-휴식 중-"
-                        } else if activity.cycling == true {
-//                            print("자전거 타는 중")
-                        }
-                    }
-                }
-            }
+        //MARK: - 특정 시간이 되면 걸음 수 초기화
+        let form = DateFormatter()
+        form.dateFormat = "HHmm"
+        let currentTime = form.string(from: Date())
+        print(currentTime)
+        if currentTime == "2300" {
+            endOfTheDayLabel.text = "총 \(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음으로 하루를 마무리 하셨습니다."
+           
+            print(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음")
+        } else if currentTime == "2330" {
+            endOfTheDayLabel.text = ""
+            UserDefaults.standard.set(0, forKey: "stepCount")
+            tomatoImage.image = UIImage(named: "1")
+            levelName.text = "LV1. 빈 화분"
+            self.walkCount.text = "0 걸음"
         }
+        
         
        //MARK: - 걸음수
         if CMPedometer.isStepCountingAvailable() {
@@ -196,33 +195,3 @@ class ViewController: UIViewController {
     
     
 }
-
-//if stepCount < 10 && self.stepCount > 0 {
-//    self.tomatoImage.image = UIImage(named: "2")
-//    self.levelName.text = "LV2. 씨앗"
-//    self.sendNotification(seconds: 1)
-//} else if self.stepCount < 20 && self.stepCount > 9  {
-//    self.tomatoImage.image = UIImage(named: "3")
-//    self.levelName.text = "LV3. 뿌리"
-//} else if self.stepCount < 30 && self.stepCount > 19  {
-//    self.tomatoImage.image = UIImage(named: "4")
-//    self.levelName.text = "LV4. 뿌리뿌리"
-//} else if self.stepCount < 40 && self.stepCount > 29  {
-//    self.tomatoImage.image = UIImage(named: "5")
-//    self.levelName.text = "LV5. 아기새싹"
-//} else if self.stepCount < 50 && self.stepCount > 39  {
-//    self.tomatoImage.image = UIImage(named: "6")
-//    self.levelName.text = "LV6. 자란 새싹"
-//} else if self.stepCount < 60 && self.stepCount > 49  {
-//    self.tomatoImage.image = UIImage(named: "7")
-//    self.levelName.text = "LV7. 많이 자란 새싹"
-//} else if self.stepCount < 70 && self.stepCount > 59  {
-//    self.tomatoImage.image = UIImage(named: "8")
-//    self.levelName.text = "LV8. 큰 새싹"
-//} else if self.stepCount < 80 && self.stepCount > 69  {
-//    self.tomatoImage.image = UIImage(named: "9")
-//    self.levelName.text = "LV9. 봉오리"
-//} else if self.stepCount < 90 && self.stepCount > 79  {
-//    self.tomatoImage.image = UIImage(named: "10")
-//    self.levelName.text = "LV10. 꽃"
-//}
