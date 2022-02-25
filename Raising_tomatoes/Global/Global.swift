@@ -12,5 +12,12 @@ struct CheckFlag {
 }
 
 struct Today {
-    static var day = 0
+    static var day = 0 //오늘 날짜를 저장
+    static var yyyymmdd = "" //오늘의 년도 월 일 저장
+    static var time = ""
+}
+
+struct Success {
+    static var state: [String] = []
+    static var clear: [String] = []
 }

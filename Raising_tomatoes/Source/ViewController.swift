@@ -20,16 +20,25 @@ class ViewController: UIViewController {
     let activityManager = CMMotionActivityManager()
     var stepCount = 0
     var extraStepCount = 0
+    var levelState = "LV2"
     
     let userNotificationCenter = UNUserNotificationCenter.current() //앱 또는 앱 확장에 대한 공유 사용자 알림 센터 개체를 반환
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - 성공현황 UserDefault에 저장
+        UserDefaults.standard.set(Success.state, forKey: "SuccessState")
+        
+        Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]()
+       
+        
+        
+        
         extraStepCount = Int(UserDefaults.standard.string(forKey: "stepCount") ?? "") ?? 0 //앱 종료후 다시 실행 시킬 때 기존의 있던값을 변수에 저장
 
         //MARK: - UserDefaults에 저장된 데이터 할당
-        walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음") 걸음"
+        walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0 ") 걸음"
     
         //MARK: - 이미지 변경
         stepToImage(stepCount: extraStepCount)
@@ -43,10 +52,7 @@ class ViewController: UIViewController {
         
         //tabbar selected index 무력화
         CheckFlag.checkTabbarIndex = 1
-        
-//       //성장 화면 초기값 설정 - UserDefault 적용시 변경 예정
-//        self.tomatoImage.image = UIImage(named: "1")
-//        self.levelName.text = "LV1. 빈 화분"
+
         
         
         
@@ -54,6 +60,7 @@ class ViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         let current_date_string = formatter.string(from: Date())
+        Today.yyyymmdd = current_date_string
         date.text = current_date_string
         
         
@@ -72,11 +79,11 @@ class ViewController: UIViewController {
             }
     }
 
-    func sendNotification(seconds: Double) { // 알림 전송 함수
+    func sendLevel(seconds: Double) { // 알림 전송 함수
         let notificationContent = UNMutableNotificationContent()
 
             notificationContent.title = "토마토의 성장"
-            notificationContent.body = "현재 LV2. 씨앗으로 성장했습니다."
+            notificationContent.body = "\(levelState). 씨앗으로 성장했습니다."
 
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
             let request = UNNotificationRequest(identifier: "testNotification",
@@ -90,6 +97,8 @@ class ViewController: UIViewController {
             }
     }
     
+    
+    
     //MARK: - 걸음수에 따른 이미지 변화
     func stepToImage(stepCount: Int) {
         
@@ -99,51 +108,137 @@ class ViewController: UIViewController {
            levelName.text = "LV2. 씨앗"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 100.0) * 100))%"
            print(stepCount / 100)
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV2"
+               sendLevel(seconds: 1)
+           }
+
+           
 //           sendNotification(seconds: 1)
        } else if stepCount < 300 && stepCount > 99  {
            tomatoImage.image = UIImage(named: "3")
            levelName.text = "LV3. 뿌리"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 300.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV3"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 600 && stepCount > 299  {
            tomatoImage.image = UIImage(named: "4")
            levelName.text = "LV4. 뿌리뿌리"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 600.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV4"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 1000 && stepCount > 599  {
            tomatoImage.image = UIImage(named: "5")
            levelName.text = "LV5. 아기새싹"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 1000.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV5"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 1500 && stepCount > 999  {
             tomatoImage.image = UIImage(named: "6")
             levelName.text = "LV6. 자란 새싹"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 1500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV6"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 2500 && stepCount > 1499  {
             tomatoImage.image = UIImage(named: "7")
             levelName.text = "LV7. 많이 자란 새싹"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 2500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV7"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 3500 && stepCount > 2499  {
             tomatoImage.image = UIImage(named: "8")
             levelName.text = "LV8. 큰 새싹"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 3500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV8"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 4500 && stepCount > 3499  {
            tomatoImage.image = UIImage(named: "9")
            levelName.text = "LV9. 봉오리"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 4500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV9"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 6500 && stepCount > 4499  {
            tomatoImage.image = UIImage(named: "10")
            levelName.text = "LV10. 꽃"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 6500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV10"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 7500 && stepCount > 6499  {
            tomatoImage.image = UIImage(named: "11")
            levelName.text = "LV11. 아기 토마토"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 7500.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV11"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount < 10000 && stepCount > 7499  {
            tomatoImage.image = UIImage(named: "12")
            levelName.text = "LV12. 어린이 토마토"
            growthPercent.text = "다음 성장까지 \(round((Double(stepCount) / 10000.0) * 100))%"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV12"
+               sendLevel(seconds: 1)
+           }
+           
        } else if stepCount > 9999   {
            tomatoImage.image = UIImage(named: "13")
            levelName.text = "LV13. 토마토"
            growthPercent.text = "목표달성 완료"
+           
+           //MARK: - 푸시 알람
+           if UserDefaults.standard.bool(forKey: "SwitchState") == true {
+               levelState = "LV13"
+               sendLevel(seconds: 1)
+           }
+           
+           
        }
         
     }
@@ -155,16 +250,27 @@ class ViewController: UIViewController {
         form.dateFormat = "HHmm"
         let currentTime = form.string(from: Date())
         print(currentTime)
+        Today.time = currentTime 
         if currentTime == "2300" {
             endOfTheDayLabel.text = "총 \(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음으로 하루를 마무리 하셨습니다."
            
-            print(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음")
+            print(UserDefaults.standard.string(forKey: "stepCount") ?? "0")
+            
+            if self.stepCount > 9999 {
+                Success.state[Today.day + 1] = "성공"
+                UserDefaults.standard.set(Success.state, forKey: "SuccessState")
+            } else {
+                Success.state[Today.day + 1] = "실패"
+                UserDefaults.standard.set(Success.state, forKey: "SuccessState")
+            }
+            
         } else if currentTime == "2330" {
             endOfTheDayLabel.text = ""
             UserDefaults.standard.set(0, forKey: "stepCount")
             tomatoImage.image = UIImage(named: "1")
             levelName.text = "LV1. 빈 화분"
             self.walkCount.text = "0 걸음"
+            
         }
         
         
@@ -179,11 +285,14 @@ class ViewController: UIViewController {
 
                             //MARK: - UserDefaults에 걸음수 저장
                             UserDefaults.standard.set(self.stepCount, forKey: "stepCount")
-                            self.walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0 걸음") 걸음"
+                            self.walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음"
 //                            print(UserDefaults.standard.string(forKey: "stepCount"))
                             print(self.stepCount)
                         
                             self.stepToImage(stepCount: self.stepCount)
+                            
+                            
+                            
                             
                         }
                     }
@@ -193,5 +302,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clear(_ sender: Any) {
+        UserDefaults.standard.set(Success.clear, forKey: "SuccessState")
+        Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]()
+        print(Success.state)
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        Success.state[Today.day + 1] = "성공"
+        UserDefaults.standard.set(Success.state, forKey: "SuccessState")
+        print(Success.state)
+    }
+    
+
     
 }

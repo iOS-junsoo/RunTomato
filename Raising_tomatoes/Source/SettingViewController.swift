@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 class SettingViewController: UIViewController {
 
@@ -16,15 +18,20 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        pushNotificationSwitch.isOn = UserDefaults.standard.bool(forKey: "SwitchState")
+    }
 
     @IBAction func onAndOff(_ sender: Any) {
 //        if pushNotificationSwitch.isOn == true {
-//            UIApplication.shared.registerForRemoteNotifications() //푸쉬알람 허용
-//            print("허용")
+//            UserDefaults.standard.set(pushNotificationSwitch.isOn, forKey: "SwitchState")
 //        } else {
 //            UIApplication.shared.unregisterForRemoteNotifications() //푸쉬알람 비허용
 //            print("비허용")
+//            UserDefaults.standard.set(pushNotificationSwitch.isOn, forKey: "SwitchState")
 //        }
+        
+        UserDefaults.standard.set(pushNotificationSwitch.isOn, forKey: "SwitchState")
     }
     /*
     // MARK: - Navigation
