@@ -27,41 +27,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+               
         
-        let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "ACCchildrenheartOTF-Regular", size: 12.0)!]
-                UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         
         //MARK: - 성공현황 UserDefault에 저장
         UserDefaults.standard.set(Success.state, forKey: "SuccessState")
         
         Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]()
         
-        extraStepCount = Int(UserDefaults.standard.string(forKey: "stepCount") ?? "") ?? 0 //앱 종료후 다시 실행 시킬 때 기존의 있던값을 변수에 저장
+        
 
         //MARK: - UserDefaults에 저장된 데이터 할당
         walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음"
     
         //MARK: - 이미지 변경
-        stepToImage(stepCount: extraStepCount)
+//        stepToImage(stepCount: extraStepCount)
+//        print("extraStepCount: \(extraStepCount)")
         
         //MARK: - 푸쉬알림 함수
         requestNotificationAuthorization()
         
         //tabbar selected index 무력화
         CheckFlag.checkTabbarIndex = 1
-
-        
-        //MARK: - 현재 날짜
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        let current_date_string = formatter.string(from: Date())
-        Today.yyyymmdd = current_date_string
-        date.text = current_date_string
-        
-        
-        
-        
-        
         
     }
     
@@ -97,7 +84,7 @@ class ViewController: UIViewController {
     //MARK: - 걸음수에 따른 이미지 변화
     func stepToImage(stepCount: Int) {
         
-        print("함수:\(stepCount)")
+       print("함수:\(stepCount)")
        if stepCount < 100 && stepCount > 0 {
            tomatoImage.image = UIImage(named: "2")
            levelName.text = "LV2. 씨앗"
@@ -110,7 +97,6 @@ class ViewController: UIViewController {
                sendLevel(seconds: 1)
            }
 
-//           sendNotification(seconds: 1)
        } else if stepCount < 300 && stepCount > 99  {
            tomatoImage.image = UIImage(named: "3")
            levelName.text = "LV3. 뿌리"
@@ -237,21 +223,52 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        extraStepCount = Int(UserDefaults.standard.string(forKey: "stepCount") ?? "") ?? 0 //앱 종료후 다시 실행 시킬 때 기존의 있던값을 변수에 저장
+        
+        
+        //MARK: - 현재 날짜 메모지 날짜에 입력
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        let current_date_string = formatter.string(from: Date())
+        Today.yyyymmdd = current_date_string
+        date.text = current_date_string
+        
+        //MARK: - 앱을 종료했다가 다시 시작했을 때
+        stepToImage(stepCount: Int(UserDefaults.standard.string(forKey: "stepCount") ?? "0") ?? 0)
+        
+        
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+        
+        // 탭바 폰트 설정
+        let appearance = UITabBarItem.appearance()
+        let attributes = [NSAttributedString.Key.font:UIFont(name: "ACCchildrenheartOTF-Regular", size: 10)]
+        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
+        
         //MARK: - 특정 날짜 저장
         
         let form = DateFormatter()
         form.dateFormat = "yyyyMMdd"
         let currentDate = form.string(from: Date())
         print(currentDate)
-        
+//        let form = DateFormatter()
+//        form.dateFormat = "HHmm"
+//        let currentDate = form.string(from: Date())
+//        print(currentDate)
+
         if dateFlag == 0 {
             UserDefaults.standard.set(currentDate, forKey: "Date") //비교 날짜를 저장
             
             dateFlag = 1 //저장 비허용으로 만들기
         }
         
-        //MARK: - 날짜가 변경되면 초기화
+        //MARK: - 날짜가 변경되면 '초기화'
         if UserDefaults.standard.string(forKey: "Date") ?? "0" != currentDate {
             print("초기화")
             endOfTheDayLabel.text = ""
@@ -260,6 +277,18 @@ class ViewController: UIViewController {
             levelName.text = "LV1. 빈 화분"
             self.walkCount.text = "0 걸음"
             growthPercent.text = "다음 성장까지 0.0%"
+            dateFlag = 0 //다시 허용으로
+            
+            if self.stepCount > 9999 {
+                Success.state[Today.day + 1] = "성공" //성공여부 입력
+                UserDefaults.standard.set(Success.state, forKey: "SuccessState") //성공여부 배열 UserDefaults에 저장
+                
+            } else {
+                Success.state[Today.day + 1] = "실패"
+                UserDefaults.standard.set(Success.state, forKey: "SuccessState")
+                
+            }
+            
         }
         
         
@@ -271,18 +300,8 @@ class ViewController: UIViewController {
         Today.time = currentTime
         if currentTime == "2300" {
             endOfTheDayLabel.text = "총 \(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음으로 하루를 마무리 하셨습니다."
-
-            print(UserDefaults.standard.string(forKey: "stepCount") ?? "0")
-
-            if self.stepCount > 9999 {
-                Success.state[Today.day + 1] = "성공"
-                UserDefaults.standard.set(Success.state, forKey: "SuccessState")
-            } else {
-                Success.state[Today.day + 1] = "실패"
-                UserDefaults.standard.set(Success.state, forKey: "SuccessState")
-            }
-
         }
+        
         
        //MARK: - 걸음수
         if CMPedometer.isStepCountingAvailable() {
@@ -298,7 +317,6 @@ class ViewController: UIViewController {
                             //MARK: - UserDefaults에 걸음수 저장
                             UserDefaults.standard.set(self.stepCount, forKey: "stepCount")
                             self.walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음"
-//                            print(UserDefaults.standard.string(forKey: "stepCount"))
                             print(self.stepCount)
                         
                             self.stepToImage(stepCount: self.stepCount)

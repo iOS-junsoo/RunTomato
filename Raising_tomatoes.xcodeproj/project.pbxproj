@@ -25,6 +25,10 @@
 		997B709727BBEAAF00C79A82 /* recordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997B709527BBEAAF00C79A82 /* recordCollectionViewCell.xib */; };
 		997B709A27BCD9ED00C79A82 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B709927BCD9ED00C79A82 /* Extension.swift */; };
 		998AB23B27DDF93B009F7F03 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AB23A27DDF93B009F7F03 /* BadgeViewController.swift */; };
+		99DBFECD27E1F94000DCE715 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBFECB27E1F94000DCE715 /* BadgeTableViewCell.swift */; };
+		99DBFECE27E1F94000DCE715 /* BadgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBFECC27E1F94000DCE715 /* BadgeTableViewCell.xib */; };
+		99DBFED127E1F96500DCE715 /* Badge2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBFECF27E1F96500DCE715 /* Badge2TableViewCell.swift */; };
+		99DBFED227E1F96500DCE715 /* Badge2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBFED027E1F96500DCE715 /* Badge2TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		997B709527BBEAAF00C79A82 /* recordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = recordCollectionViewCell.xib; sourceTree = "<group>"; };
 		997B709927BCD9ED00C79A82 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		998AB23A27DDF93B009F7F03 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
+		99DBFECB27E1F94000DCE715 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
+		99DBFECC27E1F94000DCE715 /* BadgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeTableViewCell.xib; sourceTree = "<group>"; };
+		99DBFECF27E1F96500DCE715 /* Badge2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge2TableViewCell.swift; sourceTree = "<group>"; };
+		99DBFED027E1F96500DCE715 /* Badge2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Badge2TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +120,8 @@
 			children = (
 				997B707027B7F86E00C79A82 /* Main.storyboard */,
 				997B709327BBEA9600C79A82 /* Record */,
-				997B706E27B7F86E00C79A82 /* ViewController.swift */,
-				997B708B27BA266E00C79A82 /* SettingViewController.swift */,
-				998AB23A27DDF93B009F7F03 /* BadgeViewController.swift */,
+				99DBFECA27E1F52500DCE715 /* Main */,
+				99DBFEC927E1F51600DCE715 /* Badge */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -143,6 +150,27 @@
 				997B709927BCD9ED00C79A82 /* Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		99DBFEC927E1F51600DCE715 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				998AB23A27DDF93B009F7F03 /* BadgeViewController.swift */,
+				99DBFECB27E1F94000DCE715 /* BadgeTableViewCell.swift */,
+				99DBFECC27E1F94000DCE715 /* BadgeTableViewCell.xib */,
+				99DBFECF27E1F96500DCE715 /* Badge2TableViewCell.swift */,
+				99DBFED027E1F96500DCE715 /* Badge2TableViewCell.xib */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		99DBFECA27E1F52500DCE715 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				997B706E27B7F86E00C79A82 /* ViewController.swift */,
+				997B708B27BA266E00C79A82 /* SettingViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +234,8 @@
 				997B707727B7F86E00C79A82 /* LaunchScreen.storyboard in Resources */,
 				997B708527B931CB00C79A82 /* ACC어린이마음고운체.otf in Resources */,
 				997B707427B7F86E00C79A82 /* Assets.xcassets in Resources */,
+				99DBFECE27E1F94000DCE715 /* BadgeTableViewCell.xib in Resources */,
+				99DBFED227E1F96500DCE715 /* Badge2TableViewCell.xib in Resources */,
 				997B708627B931CB00C79A82 /* ACC어린이하늘맑은체.otf in Resources */,
 				997B708727B931CB00C79A82 /* ACC어린이가을담은체.otf in Resources */,
 				997B708127B92CA100C79A82 /* 빈폴 2020OTF Medium.otf in Resources */,
@@ -227,7 +257,9 @@
 				997B709627BBEAAF00C79A82 /* recordCollectionViewCell.swift in Sources */,
 				997B709227BBE65E00C79A82 /* Global.swift in Sources */,
 				997B706D27B7F86E00C79A82 /* SceneDelegate.swift in Sources */,
+				99DBFECD27E1F94000DCE715 /* BadgeTableViewCell.swift in Sources */,
 				997B708F27BBE5A900C79A82 /* recordViewController.swift in Sources */,
+				99DBFED127E1F96500DCE715 /* Badge2TableViewCell.swift in Sources */,
 				997B708C27BA266E00C79A82 /* SettingViewController.swift in Sources */,
 				997B709A27BCD9ED00C79A82 /* Extension.swift in Sources */,
 				998AB23B27DDF93B009F7F03 /* BadgeViewController.swift in Sources */,

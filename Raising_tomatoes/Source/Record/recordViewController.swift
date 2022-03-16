@@ -25,6 +25,8 @@ class recordViewController: UIViewController {
     
     var countSuccess = 0
     var countFailure = 0
+    var monthFlag = 0 //달 체크 flag
+    var dayFlag = 0
     
     @IBOutlet weak var currentStatusSofar: UILabel!
     
@@ -84,41 +86,58 @@ class recordViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        
-        if Today.time == "2300" { // 오후 11시가 되면 성공, 실패의 개수가 몇개인지
-            countSuccess = 0
-            countFailure = 0
-            //위의 변수를 초기화 한 이유는 초기화 하지 않으면 이전에 더했던 것들과 같이 더해서 계산 오류가 생긴다.
-            
-            countSuccessAndFailure()
-        }
+        countSuccessAndFailure()
+        currentStatusSofar.text = "지금(\(Today.yyyymmdd))까지 토마토 재배 성공 횟수는 \(countSuccess)번, 실패 횟수는 \(countFailure)번 입니다. "
+        collectionView.reloadData()
         
         //MARK: - 앱 들어가면 성장화면 바로 띄우기
         if CheckFlag.checkTabbarIndex == 0 {
             tabBarController?.selectedIndex = 1
         }
-        collectionView.reloadData()
         
-        currentStatusSofar.text = "지금(\(Today.yyyymmdd))까지 토마토 재배 성공 횟수는 \(countSuccess)번, 실패 횟수는 \(countFailure)번 입니다. "
+        
     }
     
-    
-    
+
     
     func countSuccessAndFailure() { //성공 실패 여부 조회
-        for i in 0...Today.day - 1 {
+        countSuccess = 0
+        countFailure = 0
+        for i in 0...Success.state.count - 1 {
+            
             if Success.state[i] == "성공" {
                 countSuccess += 1
                 
             } else if Success.state[i] == "실패" {
                 countFailure += 1
             }
+            print(Success.state[i])
             
         }
-        print("\(Today.day)부터 \(Success.state.count)까지")
+        print("\(Today.day)부터 \(Success.state.count)까지 성공\(countSuccess) 실패\(countFailure)")
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //MARK: - 날짜가 바뀌면 성공여부 초기화
+        let form = DateFormatter()
+        form.dateFormat = "MM"
+        let currentMonth = form.string(from: Date())
+        print(currentMonth)
+        
+        if monthFlag == 0 {
+            UserDefaults.standard.set(currentMonth, forKey: "Month")
+            monthFlag = 1
+        }
+        
+        if UserDefaults.standard.string(forKey: "Month") ?? "0" != currentMonth{
+            UserDefaults.standard.set(Success.clear, forKey: "SuccessState")
+            Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]()
+            monthFlag = 0
+        }
+        
+    }
+    
+    
 
 }
 
@@ -152,6 +171,9 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         default:
             cell.dateLabel.text = days[indexPath.row] // 일
+            
+            Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]() //저장된 배열 다시 전역변수에 전달 
+            
             cell.successLabel.text = Success.state[indexPath.row] // 성공여부
 
             
