@@ -27,8 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-               
-        
         
         //MARK: - 성공현황 UserDefault에 저장
         UserDefaults.standard.set(Success.state, forKey: "SuccessState")
@@ -224,6 +222,8 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         extraStepCount = Int(UserDefaults.standard.string(forKey: "stepCount") ?? "") ?? 0 //앱 종료후 다시 실행 시킬 때 기존의 있던값을 변수에 저장
         
         
@@ -243,13 +243,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        
-        
-        
-        // 탭바 폰트 설정
-        let appearance = UITabBarItem.appearance()
-        let attributes = [NSAttributedString.Key.font:UIFont(name: "ACCchildrenheartOTF-Regular", size: 10)]
-        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
         
         //MARK: - 특정 날짜 저장
         
@@ -296,9 +289,11 @@ class ViewController: UIViewController {
         let formm = DateFormatter()
         formm.dateFormat = "HHmm"
         let currentTime = formm.string(from: Date())
+        
+        let currentTimeisdone = Int(currentTime)
 
         Today.time = currentTime
-        if currentTime == "2300" {
+        if currentTimeisdone ?? 0 > 2300 && currentTimeisdone ?? 0 < 2400 {
             endOfTheDayLabel.text = "총 \(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음으로 하루를 마무리 하셨습니다."
         }
         
