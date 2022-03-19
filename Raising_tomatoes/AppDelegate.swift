@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Raising_tomatoes
-//
-//  Created by 준수김 on 2022/02/12.
-//
-
 import UIKit
 
 @main
@@ -14,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // 탭바 폰트 설정
+        //MARK: - 탭바 폰트 설정
         let appearance = UITabBarItem.appearance()
         let attributes = [NSAttributedString.Key.font:UIFont(name: "ACCchildrenheartOTF-Regular", size: 13)]
         appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)

@@ -20,4 +20,5 @@ struct Today {
 struct Success {
     static var state: [String] = []
     static var clear: [String] = []
+    static var stamp: [String] = []
 }

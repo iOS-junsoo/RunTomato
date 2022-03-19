@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="enl-Xi-7Lf">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="enl-Xi-7Lf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,39 +40,39 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Raising_tomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-dr-Ai7">
-                                <rect key="frame" x="0.0" y="693.33333333333337" width="390" height="67.666666666666629"/>
+                                <rect key="frame" x="0.0" y="741.5" width="414" height="71.5"/>
                                 <color key="backgroundColor" red="0.34901398420000002" green="0.54902225729999998" blue="0.49803888800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="책상" translatesAutoresizingMaskIntoConstraints="NO" id="wBJ-1j-GFE">
-                                <rect key="frame" x="12" y="446.66666666666674" width="366" height="314.33333333333326"/>
+                                <rect key="frame" x="12" y="465" width="390" height="348"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Brr-ML-vem">
-                                <rect key="frame" x="12" y="446.66666666666674" width="366" height="314.33333333333326"/>
+                                <rect key="frame" x="12" y="465" width="390" height="348"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEg-aZ-vyp">
-                                <rect key="frame" x="9" y="141.66666666666663" width="372" height="304"/>
+                                <rect key="frame" x="9" y="141.5" width="396" height="322.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="메모지" translatesAutoresizingMaskIntoConstraints="NO" id="fy5-rD-QLU">
-                                        <rect key="frame" x="20" y="20" width="332" height="264"/>
+                                        <rect key="frame" x="20" y="20" width="356" height="282.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.02.13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="c5x-qD-yOX">
-                                        <rect key="frame" x="89.333333333333314" y="20" width="78" height="164.33333333333334"/>
+                                        <rect key="frame" x="95" y="20" width="83" height="177"/>
                                         <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 성장까지 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-Yo-jDH">
-                                        <rect key="frame" x="123.66666666666666" y="20" width="124.66666666666666" height="363.33333333333331"/>
+                                        <rect key="frame" x="132" y="20" width="132" height="388.5"/>
                                         <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0걸음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="0R3-K3-Smp">
-                                        <rect key="frame" x="137.33333333333334" y="20" width="97.333333333333343" height="264"/>
+                                        <rect key="frame" x="146.5" y="20" width="103.5" height="282.5"/>
                                         <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -96,19 +96,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV1.빈 화분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-bI-NmM">
-                                <rect key="frame" x="13" y="58" width="132.66666666666666" height="55.666666666666657"/>
+                                <rect key="frame" x="13" y="58" width="141" height="55.5"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="16m-Xv-v2P">
-                                <rect key="frame" x="29.333333333333343" y="146.66666666666666" width="331.33333333333326" height="20.333333333333343"/>
+                                <rect key="frame" x="31" y="146.5" width="352" height="21.5"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-gH-R2F">
-                                <rect key="frame" x="331" y="62.333333333333343" width="47" height="47"/>
+                                <rect key="frame" x="355" y="62.5" width="47" height="47"/>
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -173,7 +173,7 @@
             <objects>
                 <viewController id="NRK-YB-KjZ" customClass="SettingViewController" customModule="Raising_tomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="354-jl-bkk">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ps-Vp-FgU">
@@ -220,11 +220,11 @@
             <objects>
                 <viewController id="GgP-dD-Z7V" customClass="recordViewController" customModule="Raising_tomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljU-CK-VqC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TnT-fG-Y93">
-                                <rect key="frame" x="38" y="138.00000000000003" width="315" height="379.66666666666674"/>
+                                <rect key="frame" x="38" y="138" width="334.5" height="403"/>
                                 <color key="backgroundColor" red="0.9529423118" green="0.91764646770000002" blue="0.85490328069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8YE-gd-VYa">
                                     <size key="itemSize" width="45" height="60"/>
@@ -245,7 +245,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGY-D6-p8A">
-                                <rect key="frame" x="69" y="86" width="252" height="25"/>
+                                <rect key="frame" x="69" y="86" width="276" height="25"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -300,11 +300,11 @@
             <objects>
                 <viewController id="THZ-4i-4Rg" customClass="BadgeViewController" customModule="Raising_tomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nk7-3O-9GR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ni6-kc-glY">
-                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.95294117647058818" green="0.91764705882352937" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -330,14 +330,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="1" width="166.5" height="166.5"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <image name="달력" width="23" height="23"/>
-        <image name="메모지" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="메모지" width="166.5" height="166.5"/>
         <image name="배지" width="23" height="23"/>
-        <image name="책상" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="책상" width="166.5" height="166.5"/>
         <image name="토마토" width="23" height="23"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
