@@ -1,5 +1,5 @@
 앱 이름: 토마토의 성장, 만보기
-<img src = "https://ibb.co/mXwP7yY" width="40%" height="40%">
+<img src = "https://i.ibb.co/0FSz39W/image.png" width="40%" height="40%">
 
 #  2022.02.12 ~ 13
 
