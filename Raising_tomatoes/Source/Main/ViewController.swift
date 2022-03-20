@@ -293,13 +293,13 @@ class ViewController: UIViewController {
         
         //MARK: - 특정 날짜 저장
         
-//        let form = DateFormatter()
-//        form.dateFormat = "yyyyMMdd"
-//        let currentDate = form.string(from: Date())
-        
         let form = DateFormatter()
-        form.dateFormat = "HHmm"
+        form.dateFormat = "yyyyMMdd"
         let currentDate = form.string(from: Date())
+        
+//        let form = DateFormatter()
+//        form.dateFormat = "HHmm"
+//        let currentDate = form.string(from: Date())
 
         
 
