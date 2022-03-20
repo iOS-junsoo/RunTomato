@@ -22,7 +22,7 @@ class recordViewController: UIViewController {
     var days: [String] = []
     var daysCountInMonth = 0 // 해당 월이 며칠까지 있는지
     var weekdayAdding = 0 // 시작일
-    
+    var d = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44"]
     var countSuccess = 0
     var countFailure = 0
     var monthFlag = 0 //달 체크 flag
@@ -74,14 +74,14 @@ class recordViewController: UIViewController {
                 self.days.append("")
                 Success.state.append("")
                 Success.clear.append("")
+                Success.stamp.append("")
             } else {
                 self.days.append(String(day))
                 Success.state.append("")
                 Success.clear.append("")
+                Success.stamp.append("")
             }
         }
-        print(Success.state)
-        print(Success.state.count)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -152,8 +152,11 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case 0:
             return 7
             
-        default:
+        case 1:
             return self.days.count
+            
+        default:
+            return 0
            
         }
         
@@ -165,23 +168,24 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
         
         switch indexPath.section {
+        
+        case 1:
+            cell.dateLabel.text = days[indexPath.row] // 일
+            Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]() //저장된 배열 다시 전역변수에 전달
+            
+            Success.stamp = UserDefaults.standard.stringArray(forKey: "SuccessStamp") ?? [String]()
+        
+            cell.successStamp.image = UIImage(named: Success.stamp[indexPath.row])
+            
+
         case 0:
             cell.dateLabel.text = weeks[indexPath.row] // 요일
-            cell.successLabel.text = ""
-        
-        default:
-            cell.dateLabel.text = days[indexPath.row] // 일
             
-            Success.state = UserDefaults.standard.stringArray(forKey: "SuccessState") ?? [String]() //저장된 배열 다시 전역변수에 전달 
-            
-            cell.successLabel.text = Success.state[indexPath.row] // 성공여부
 
+            cell.successStamp.image = UIImage(named: "")
             
-            if Success.state[indexPath.row] == "성공" {
-                cell.successLabel.textColor = UIColor(red: 107, green: 137, blue: 132)
-            } else if Success.state[indexPath.row] == "실패" {
-                cell.successLabel.textColor = UIColor(red: 192 , green: 86, blue: 74)
-            }
+        default:
+            return UICollectionViewCell()
         }
         
         //성공여부는 당일 토마토를 재배하기 못하면 successState 배열에 append로 실패 할당
@@ -192,7 +196,7 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.dateLabel.textColor = .red
         } else if indexPath.row % 7 == 6 { // 토요일
             cell.dateLabel.textColor = .blue
-        } else { // 월요일 좋아(평일)
+        } else { // 월요일
             cell.dateLabel.textColor = .black
         }
         

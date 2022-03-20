@@ -293,13 +293,13 @@ class ViewController: UIViewController {
         
         //MARK: - 특정 날짜 저장
         
-        let form = DateFormatter()
-        form.dateFormat = "yyyyMMdd"
-        let currentDate = form.string(from: Date())
-//        print(currentDate)
 //        let form = DateFormatter()
-//        form.dateFormat = "HHmm"
+//        form.dateFormat = "yyyyMMdd"
 //        let currentDate = form.string(from: Date())
+        
+        let form = DateFormatter()
+        form.dateFormat = "HHmm"
+        let currentDate = form.string(from: Date())
 
         
 
@@ -309,6 +309,8 @@ class ViewController: UIViewController {
             dateFlag = 1 //저장 비허용으로 만들기
             
         }
+        
+//        UserDefaults.standard.set(Success.clear, forKey: "SuccessStamp")
         
         //MARK: - 날짜가 변경되면 '초기화'
         if UserDefaults.standard.string(forKey: "Date") ?? "0" != currentDate {
@@ -322,14 +324,16 @@ class ViewController: UIViewController {
             growthPercent.text = "다음 성장까지 0.0%"
             dateFlag = 0 //다시 허용으로
             
-            if self.stepCount > 9999 {
+            if self.stepCount > 9999 { //9999
                 Success.state[Today.day + 1] = "성공" //성공여부 입력
                 UserDefaults.standard.set(Success.state, forKey: "SuccessState") //성공여부 배열 UserDefaults에 저장
+                
+                Success.stamp[Today.day + 1] = "토마토 스탬프"
+                UserDefaults.standard.set(Success.stamp, forKey: "SuccessStamp")
                 
             } else {
                 Success.state[Today.day + 1] = "실패"
                 UserDefaults.standard.set(Success.state, forKey: "SuccessState")
-                
             }
             
             onePsuh1 = 0
@@ -344,6 +348,8 @@ class ViewController: UIViewController {
             onePsuh10 = 0
             onePsuh11 = 0
             onePsuh12 = 0
+            
+            
             
         }
         

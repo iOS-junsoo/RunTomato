@@ -10,7 +10,8 @@ import UIKit
 class recordCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var successLabel: UILabel!
+
+    @IBOutlet weak var successStamp: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

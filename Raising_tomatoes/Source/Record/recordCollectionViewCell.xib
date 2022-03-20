@@ -28,22 +28,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSM-gP-Kjl">
-                        <rect key="frame" x="2" y="32" width="41" height="20"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="토마토 스탬프" translatesAutoresizingMaskIntoConstraints="NO" id="Qi9-Gb-7lD">
+                        <rect key="frame" x="0.0" y="20" width="45" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="133" height="128"/>
             <connections>
                 <outlet property="dateLabel" destination="Bcr-ll-VUz" id="ahS-0l-ND3"/>
-                <outlet property="successLabel" destination="SSM-gP-Kjl" id="QaA-2F-w7Y"/>
+                <outlet property="successStamp" destination="Qi9-Gb-7lD" id="EGW-gO-twG"/>
             </connections>
             <point key="canvasLocation" x="210.86956521739131" y="178.45982142857142"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="토마토 스탬프" width="500" height="500"/>
+    </resources>
 </document>

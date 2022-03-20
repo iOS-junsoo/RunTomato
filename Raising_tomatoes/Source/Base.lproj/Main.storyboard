@@ -223,8 +223,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TnT-fG-Y93">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TnT-fG-Y93">
                                 <rect key="frame" x="38" y="138" width="334.5" height="403"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.9529423118" green="0.91764646770000002" blue="0.85490328069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8YE-gd-VYa">
                                     <size key="itemSize" width="45" height="60"/>
@@ -251,21 +252,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="결과는 매일 밤 12시 이후에 반영됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMC-83-US3">
-                                <rect key="frame" x="29" y="646" width="234" height="16"/>
+                                <rect key="frame" x="43" y="673" width="234" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재(2022.02.16)까지 성공 11개, 실패 14개가 있습니다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="24" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW5-lm-3Qy">
-                                <rect key="frame" x="29" y="588" width="324" height="56"/>
+                                <rect key="frame" x="43" y="615" width="324" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="지금까지의 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAP-LN-qQm">
-                                <rect key="frame" x="29" y="534" width="178" height="30"/>
+                                <rect key="frame" x="43" y="561" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ACCchildrenheartOTF-Regular" family="ACCchildrenheartOTF" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -276,12 +277,8 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.91764705882352937" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CHD-2C-7S2" firstAttribute="trailing" secondItem="nGY-D6-p8A" secondAttribute="trailing" constant="69" id="IFY-yr-7oF"/>
-                            <constraint firstItem="TnT-fG-Y93" firstAttribute="top" secondItem="nGY-D6-p8A" secondAttribute="bottom" constant="27" id="i0N-gm-M74"/>
                             <constraint firstItem="nGY-D6-p8A" firstAttribute="top" secondItem="CHD-2C-7S2" secondAttribute="top" constant="42" id="iZO-US-GWc"/>
-                            <constraint firstItem="TnT-fG-Y93" firstAttribute="height" secondItem="ljU-CK-VqC" secondAttribute="height" multiplier="0.45" id="r22-nS-hh2"/>
-                            <constraint firstItem="TnT-fG-Y93" firstAttribute="leading" secondItem="CHD-2C-7S2" secondAttribute="leading" constant="38" id="tO0-wj-YYC"/>
                             <constraint firstItem="nGY-D6-p8A" firstAttribute="leading" secondItem="CHD-2C-7S2" secondAttribute="leading" constant="69" id="vrS-Wm-Blm"/>
-                            <constraint firstItem="TnT-fG-Y93" firstAttribute="width" secondItem="ljU-CK-VqC" secondAttribute="width" multiplier="0.807692" id="zyf-gH-V6t"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="기록" image="달력" id="iOq-dc-n1b"/>

@@ -22,3 +22,5 @@ struct Success {
     static var clear: [String] = []
     static var stamp: [String] = []
 }
+
+
