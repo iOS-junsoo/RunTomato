@@ -103,7 +103,7 @@ class ViewController: UIViewController {
            
            tomatoImage.image = UIImage(named: "3")
            levelName.text = "LV3. 뿌리"
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount - 100) / 200.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 100) / 200.0) * 100))%"
            
            if onePsuh2 == 0 {
                //MARK: - 푸시 알람
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
 
            tomatoImage.image = UIImage(named: "4")
            levelName.text = "LV4. 뿌리뿌리"
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount - 300) / 300.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 300) / 300.0) * 100))%"
            
            if onePsuh3 == 0 {
                //MARK: - 푸시 알람
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
 
            tomatoImage.image = UIImage(named: "5")
            levelName.text = "LV5. 아기새싹"
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 600 / 400.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 600) / 400.0) * 100))%"
            if onePsuh4 == 0 {
            //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -151,7 +151,7 @@ class ViewController: UIViewController {
             tomatoImage.image = UIImage(named: "6")
             levelName.text = "LV6. 자란 새싹"
         
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 1000 / 500.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 1000) / 500.0) * 100))%"
            if onePsuh5 == 0 {
                //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -167,7 +167,7 @@ class ViewController: UIViewController {
             tomatoImage.image = UIImage(named: "7")
             levelName.text = "LV7. 많이 자란 새싹"
 
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 1500 / 1000.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 1500) / 1000.0) * 100))%"
            if onePsuh6 == 0 {
            //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -182,7 +182,7 @@ class ViewController: UIViewController {
 
             tomatoImage.image = UIImage(named: "8")
             levelName.text = "LV8. 큰 새싹"
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 2500 / 1000.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 2500) / 1000.0) * 100))%"
            if onePsuh7 == 0 {
                //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -198,7 +198,7 @@ class ViewController: UIViewController {
            tomatoImage.image = UIImage(named: "9")
            levelName.text = "LV9. 봉오리"
         
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 3500 / 1000.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 3500) / 1000.0) * 100))%"
            if onePsuh8 == 0 {
            //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -214,7 +214,7 @@ class ViewController: UIViewController {
            tomatoImage.image = UIImage(named: "10")
            levelName.text = "LV10. 꽃"
         
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 4500 / 1000.0) * 100))%"
+            growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 4500) / 1000.0) * 100))%"
            if onePsuh9 == 0 {
                //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -229,7 +229,7 @@ class ViewController: UIViewController {
            tomatoImage.image = UIImage(named: "11")
            levelName.text = "LV11. 아기 토마토"
            
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 5500 / 2000.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 5500) / 2000.0) * 100))%"
            if onePsuh10 == 0 {
            //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
            tomatoImage.image = UIImage(named: "12")
            levelName.text = "LV12. 어린이 토마토"
 
-           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", (Double(stepCount) - 7500 / 2500.0) * 100))%"
+           growthPercent.text = "다음 성장까지 \(String(format: "%.1f", ((Double(stepCount) - 7500) / 2500.0) * 100))%"
            if onePsuh11 == 0 {
                //MARK: - 푸시 알람
                if UserDefaults.standard.bool(forKey: "SwitchState") == true {
@@ -309,8 +309,7 @@ class ViewController: UIViewController {
             dateFlag = 1 //저장 비허용으로 만들기
             
         }
-        
-//        UserDefaults.standard.set(Success.clear, forKey: "SuccessStamp")
+
         
         //MARK: - 날짜가 변경되면 '초기화'
         if UserDefaults.standard.string(forKey: "Date") ?? "0" != currentDate {
@@ -387,7 +386,7 @@ class ViewController: UIViewController {
                             UserDefaults.standard.set(self.stepCount, forKey: "stepCount")
                             self.walkCount.text = "\(UserDefaults.standard.string(forKey: "stepCount") ?? "0") 걸음"
 //                            print(self.stepCount)
-                        
+                            print("<<DEGUG\(self.stepCount)")
                             self.stepToImage(stepCount: self.stepCount)
                             
                         }

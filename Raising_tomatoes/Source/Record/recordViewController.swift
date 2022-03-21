@@ -12,8 +12,6 @@ class recordViewController: UIViewController {
     @IBOutlet weak var yearMonthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //Date DATA
-    
     let now = Date() //현재 날짜
     var cal = Calendar.current
     let dateFormatter = DateFormatter()
@@ -22,7 +20,6 @@ class recordViewController: UIViewController {
     var days: [String] = []
     var daysCountInMonth = 0 // 해당 월이 며칠까지 있는지
     var weekdayAdding = 0 // 시작일
-    var d = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44"]
     var countSuccess = 0
     var countFailure = 0
     var monthFlag = 0 //달 체크 flag
