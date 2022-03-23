@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var stepCount = 0
     var extraStepCount = 0
     var levelState = "LV2"
-    var dateFlag = 0 //하루에 한번씩 체크할 샘플 데이트 저장
+    
     var onePsuh1 = 0 //푸쉬알람을 한번만 실행하도록
     var onePsuh2 = 0
     var onePsuh3 = 0
@@ -48,8 +48,8 @@ class ViewController: UIViewController {
         //MARK: - 푸쉬알림 허용 함수 호출
         requestNotificationAuthorization()
         
-        //tabbar selected index 무력화
-        CheckFlag.checkTabbarIndex = 1
+//        //tabbar selected index 무력화
+//        CheckFlag.checkTabbarIndex = 1
         
     }
     
@@ -290,51 +290,30 @@ class ViewController: UIViewController {
         //MARK: - 앱을 종료했다가 다시 시작했을 때
         stepToImage(stepCount: Int(UserDefaults.standard.string(forKey: "stepCount") ?? "0") ?? 0)
         
-        
-        //MARK: - 특정 날짜 저장
-        
-        let form = DateFormatter()
-        form.dateFormat = "yyyyMMdd"
-        let currentDate = form.string(from: Date())
-        
-//        let form = DateFormatter()
-//        form.dateFormat = "HHmm"
-//        let currentDate = form.string(from: Date())
-
-        
-
-        if dateFlag == 0 { //falg가 0이면 비교날짜를 저장하고 flag를 1로 만든다.
-            UserDefaults.standard.set(currentDate, forKey: "Date") //비교 날짜를 저장
-            print("--change date--")
-            dateFlag = 1 //저장 비허용으로 만들기
-            
-        }
-
-        
         //MARK: - 날짜가 변경되면 '초기화'
-        if UserDefaults.standard.string(forKey: "Date") ?? "0" != currentDate {
-                
-            print("--reset--")
+        if Reset.flag == 1 {
+
+            print(">>DEBUG - --reset--")
             endOfTheDayLabel.text = ""
             UserDefaults.standard.set(0, forKey: "stepCount")
             tomatoImage.image = UIImage(named: "1")
             levelName.text = "LV1. 빈 화분"
             self.walkCount.text = "0 걸음"
             growthPercent.text = "다음 성장까지 0.0%"
-            dateFlag = 0 //다시 허용으로
             
+
             if self.stepCount > 9999 { //9999
                 Success.state[Today.day + 1] = "성공" //성공여부 입력
                 UserDefaults.standard.set(Success.state, forKey: "SuccessState") //성공여부 배열 UserDefaults에 저장
-                
+
                 Success.stamp[Today.day + 1] = "토마토 스탬프"
                 UserDefaults.standard.set(Success.stamp, forKey: "SuccessStamp")
-                
+
             } else {
                 Success.state[Today.day + 1] = "실패"
                 UserDefaults.standard.set(Success.state, forKey: "SuccessState")
             }
-            
+
             onePsuh1 = 0
             onePsuh2 = 0
             onePsuh3 = 0
@@ -347,15 +326,9 @@ class ViewController: UIViewController {
             onePsuh10 = 0
             onePsuh11 = 0
             onePsuh12 = 0
-            
-            
-            
+            Reset.flag = 0
         }
-        
-        print("유저디폴트 \(UserDefaults.standard.string(forKey: "Date"))")
-        print("현재 시간 \(currentDate)")
-        
-        
+
     }
     
     

@@ -11,6 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var checkFlag = true
+    var dateFlag = 0 //하루에 한번씩 체크할 샘플 데이트 저장
+    var currentDate = ""
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,35 +22,55 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        print("sceneDidDisconnect") //-> 앱이 완전히 종료
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        print("sceneDidBecomeActive") //-> 앱이 다시 활성화 상태로
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+        print("sceneWillResignActive") //-> 앱이 비활성화 상태로
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         
+        
+        
+        print("sceneWillEnterForeground") //-> 앱이 Foreground에
+        
+        let form = DateFormatter()
+        form.dateFormat = "yyyyMMdd" //"yyyyMMdd" "HHmm"
+        currentDate = form.string(from: Date())
+        
+        if UserDefaults.standard.string(forKey: "Date") ?? "0" != currentDate {
+            Reset.flag = 1
+            dateFlag = 0
+        }
+        print(">>DEBUG - 유저디폴트 \(UserDefaults.standard.string(forKey: "Date"))")
+        print(">>DEBUG - 현재 시간 \(currentDate)")
+        
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+        print("sceneDidEnterBackground") //-> 앱이 Background에
         
-        while checkFlag == true {
-            if Int(UserDefaults.standard.string(forKey: "stepCount") ?? "0") ?? 20 > 0 {
-                print("운동")
-                checkFlag = false
-            }
+        
+       
+        if dateFlag == 0 { //falg가 0이면 비교날짜를 저장하고 flag를 1로 만든다.
+            UserDefaults.standard.set(currentDate, forKey: "Date") //비교 날짜를 저장
+            dateFlag = 1 //저장 비허용으로 만들기
+            
         }
+        print(">>DEBUG - 유저디폴트 \(UserDefaults.standard.string(forKey: "Date"))")
+        print(">>DEBUG - 현재 시간 \(currentDate)")
+        
+        
     }
+    
+    
+    
+    // 로직: 백그라운드 모드에 들어가게 되면 해당 시점에서의 날짜를 유저디폴트에 저장하고 다시 들어왔을 때 실시간으로 체크하는 날짜와 비교하게 되는데 이때 같은 날짜면 초기화가 되지 않고 서로 다른 날짜면 초기화가 된다.
 
     
     

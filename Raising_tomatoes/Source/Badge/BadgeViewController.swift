@@ -22,6 +22,8 @@ class BadgeViewController: UIViewController {
         tableView.register(UINib(nibName: "BadgeTableViewCell", bundle: nil), forCellReuseIdentifier: "BadgeTableViewCell") //nib 파일 등록
         tableView.register(UINib(nibName: "Badge2TableViewCell", bundle: nil), forCellReuseIdentifier: "Badge2TableViewCell") //nib 파일 등록
     }
+    
+    
 
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9952455627EB353E00C33DA2 /* feedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9952455527EB353E00C33DA2 /* feedbackViewController.swift */; };
 		997B706B27B7F86E00C79A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706A27B7F86E00C79A82 /* AppDelegate.swift */; };
 		997B706D27B7F86E00C79A82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706C27B7F86E00C79A82 /* SceneDelegate.swift */; };
 		997B706F27B7F86E00C79A82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B706E27B7F86E00C79A82 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9952455527EB353E00C33DA2 /* feedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedbackViewController.swift; sourceTree = "<group>"; };
 		997B706727B7F86E00C79A82 /* Raising_tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raising_tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997B706A27B7F86E00C79A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		997B706C27B7F86E00C79A82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				997B706E27B7F86E00C79A82 /* ViewController.swift */,
 				997B708B27BA266E00C79A82 /* SettingViewController.swift */,
+				9952455527EB353E00C33DA2 /* feedbackViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				997B708C27BA266E00C79A82 /* SettingViewController.swift in Sources */,
 				997B709A27BCD9ED00C79A82 /* Extension.swift in Sources */,
 				998AB23B27DDF93B009F7F03 /* BadgeViewController.swift in Sources */,
+				9952455627EB353E00C33DA2 /* feedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

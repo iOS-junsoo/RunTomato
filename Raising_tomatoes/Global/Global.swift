@@ -23,4 +23,6 @@ struct Success {
     static var stamp: [String] = []
 }
 
-
+struct Reset {
+    static var flag = 0
+}

@@ -87,10 +87,10 @@ class recordViewController: UIViewController {
         currentStatusSofar.text = "지금(\(Today.yyyymmdd))까지 토마토 재배 성공 횟수는 \(countSuccess)번, 실패 횟수는 \(countFailure)번 입니다. "
         collectionView.reloadData()
         
-        //MARK: - 앱 들어가면 성장화면 바로 띄우기
-        if CheckFlag.checkTabbarIndex == 0 {
-            tabBarController?.selectedIndex = 1
-        }
+//        //MARK: - 앱 들어가면 성장화면 바로 띄우기
+//        if CheckFlag.checkTabbarIndex == 0 {
+//            
+//        }
         
         
     }
@@ -186,8 +186,6 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         //성공여부는 당일 토마토를 재배하기 못하면 successState 배열에 append로 실패 할당
-        
-
 
         if indexPath.row % 7 == 0 { // 일요일
             cell.dateLabel.textColor = .red
@@ -196,13 +194,11 @@ extension recordViewController: UICollectionViewDelegate, UICollectionViewDataSo
         } else { // 월요일
             cell.dateLabel.textColor = .black
         }
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath.section), \(indexPath.row)")
-        
     }
     
         
