@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		9952455527EB353E00C33DA2 /* feedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedbackViewController.swift; sourceTree = "<group>"; };
+		9952455727EC82E900C33DA2 /* 프로젝트 설명.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "프로젝트 설명.md"; sourceTree = "<group>"; };
 		997B706727B7F86E00C79A82 /* Raising_tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raising_tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997B706A27B7F86E00C79A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		997B706C27B7F86E00C79A82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		997B705E27B7F86E00C79A82 = {
 			isa = PBXGroup;
 			children = (
+				9952455727EC82E900C33DA2 /* 프로젝트 설명.md */,
 				997B706927B7F86E00C79A82 /* Raising_tomatoes */,
 				997B706827B7F86E00C79A82 /* Products */,
 			);
